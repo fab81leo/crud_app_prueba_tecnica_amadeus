@@ -1,0 +1,30 @@
+<!-- La idea de esta clase es poder centrar 'login works' en el medio de la pantalla -->
+<div class="body">
+    <!-- Manejando una RUTA RELATIVA -->
+    <!-- <img src="../../../assets/img/usuario.png" /> -->
+    <!-- Manejando una RUTA ABSOLUTA -->
+    <div class="login">
+        <mat-spinner *ngIf="showLoading" diameter="50" class="spinner"></mat-spinner>
+        <!-- Aquí ya tenemos enlazado nuestro formulario: [Reactive Forms] -->
+        <form *ngIf="!showLoading" [formGroup]="form" (ngSubmit)="validarCredenciales()">
+            <img src="./assets/img/usuario.png" class="ancho-img-login">
+            <h1>Login</h1>
+            <mat-form-field class="ancho-component-login" appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="usuario">
+            </mat-form-field>
+            <mat-form-field class="ancho-component-login" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput autocomplete="off" formControlName="password">
+            </mat-form-field>
+            <br />
+            <!-- Se dipara el evento (ngSubmit) -->
+            <button type="submit" 
+                    class="ancho-component-login button-login" 
+                    mat-raised-button color="primary"
+                    [disabled]="form.invalid">
+                Ingresar
+            </button>
+        </form>
+    </div>
+</div>

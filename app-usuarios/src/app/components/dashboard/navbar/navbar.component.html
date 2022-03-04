@@ -1,0 +1,22 @@
+<p>
+    <mat-toolbar color="primary">
+        <span>Administración de Usuarios</span>
+        <!-- Alinear a la derecha -->
+        <span class="example-spacer"></span>
+        <!-- routerLink lo colocamos como [routerLink] para poderlo enlazarlo a traves 
+        del property binding -->
+        <!-- Renderizando nuestro menu de una forma dinámica-->
+        <button mat-button 
+                *ngFor="let item of menu" [routerLink]="item.redirect">
+                {{ item.nombre }}
+        </button>        
+        <!-- Alinear a la mitad -->
+        <span class="example-spacer"></span>
+        <!-- logout no existe por ahora redirecciona a /login -->
+        <!-- { path: '**', redirectTo: '' } -->
+        <button mat-icon-button class="example-icon favorite-icon" 
+                aria-label="Example icon-button with heart icon">
+            <mat-icon routerLink="/logout">logout</mat-icon>
+        </button>
+    </mat-toolbar>
+</p>

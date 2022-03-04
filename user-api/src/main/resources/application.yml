@@ -1,0 +1,14 @@
+server:
+  port: 8095
+spring:
+  jpa:
+    hibernate: 
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/amadeus?zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    username: ${MYSQL_USER:ftorres}
+    password: ${MYSQL_PASSWORD:.d1s3n081}
